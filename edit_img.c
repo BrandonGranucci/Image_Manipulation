@@ -277,13 +277,17 @@ void saveFile(unsigned char * buffer, unsigned char * pixels) {
 
 
 void updateBufferParams(unsigned char * buffer) {
-    int r;
+    int r,startatzero;
     /* Swap height and width in buffer */
-    for(r=0;r<digitsinheight;r++){
-        buffer[firstwidthcharpos+r]=heightsize[r];
+    for(r=firstwidthcharpos,startatzero=0;startatzero<digitsinheight;r++,startatzero++){
+        buffer[r]=heightsize[startatzero];
+        printf("Value of r:%d\n",r);
     }
-    for(r=0;r<digitsinwidth;r++){
-        buffer[firstwidthcharpos+digitsinwidth+1+r]=widthsize[r];
+    buffer[r]=(unsigned char)32;
+    printf("Value of r:%d\n",r);
+    for(r=r+1,startatzero=0;startatzero<digitsinwidth;r++,startatzero++){
+        buffer[r]=widthsize[startatzero];
+        printf("Value of r:%d\n",r);
     } 
     
     /* Swap saved height and width values in respective array*/
@@ -294,11 +298,21 @@ void updateBufferParams(unsigned char * buffer) {
     for(r=0;r<digitsinwidth;r++){
         heightsize[r]=widthsize[r];
     } 
-    for(r=0;r<digitsinwidth;r++){
+    for(r=0;r<digitsinheight;r++){
         widthsize[r]=temp[r];
     }
+    /* Swap the saved first char position of width & height */
+    //r=firstheightcharpos;
+    //firstheightcharpos=firstwidthcharpos;
+    //firstwidthcharpos=r;
+    /* Swap the saved digits in height & width */
+    //r=digitsinheight;
+    //digitsinheight=digitsinwidth;
+    //digitsinwidth=r;
+    
     /* Ensure there is a space between height and width */
-    buffer[firstwidthcharpos+digitsinwidth]=(unsigned char)32;
+    //buffer[firstwidthcharpos+digitsinwidth]=(unsigned char)32;
+
 }
 
 void swapHeightAndWidth(){
@@ -307,6 +321,9 @@ void swapHeightAndWidth(){
     width=height;
     height=temp;
     truewidth=width*3;
+    temp=digitsinheight;
+    digitsinheight=digitsinwidth;
+    digitsinwidth=temp;
 }
 
 void printOptions() {
