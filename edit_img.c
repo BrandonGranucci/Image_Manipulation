@@ -301,18 +301,6 @@ void updateBufferParams(unsigned char * buffer) {
     for(r=0;r<digitsinheight;r++){
         widthsize[r]=temp[r];
     }
-    /* Swap the saved first char position of width & height */
-    //r=firstheightcharpos;
-    //firstheightcharpos=firstwidthcharpos;
-    //firstwidthcharpos=r;
-    /* Swap the saved digits in height & width */
-    //r=digitsinheight;
-    //digitsinheight=digitsinwidth;
-    //digitsinwidth=r;
-    
-    /* Ensure there is a space between height and width */
-    //buffer[firstwidthcharpos+digitsinwidth]=(unsigned char)32;
-
 }
 
 void swapHeightAndWidth(){
