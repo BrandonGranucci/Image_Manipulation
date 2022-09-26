@@ -2,13 +2,6 @@
 
 C based program which takes .ppm image files and allows the user to edit them in several different ways. 
 
-## Project Utilizes
-* Matrices
-* Heap
-* Bitwise Operations
-* Signedness
-* Files Opening, Editing, & Saving
-
 ## Functions Allowed
 * Flip Image Vertically or Horizontally
 * Negative (Invert Colors)
@@ -18,6 +11,13 @@ C based program which takes .ppm image files and allows the user to edit them in
 * Decrease Color Red, Green, or Blue
 * Convert To Monochrome (Black & White)
 * Undoing All Changes
+
+## Project Utilizes
+* Matrices
+* Heap
+* Bitwise Operations
+* Signedness
+* Files Opening, Editing, & Saving
 
 ## Functionality Showcase
 
