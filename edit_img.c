@@ -416,13 +416,13 @@ int main(int argc, char *argv[]) {
                 printOptions();
                 break;
             case 12:
-                printf("Making Image Less Blue\n");
-                darkenBlues(pixels);
+                printf("Making Image Less Green\n");
+                darkenGreens(pixels);
                 printOptions();
                 break;
             case 13:
-                printf("Making Image Less Green\n");
-                darkenGreens(pixels);
+                printf("Making Image Less Blue\n");
+                darkenBlues(pixels);
                 printOptions();
                 break;
             case 14:
