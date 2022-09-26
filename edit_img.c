@@ -87,7 +87,7 @@ void getParameters(unsigned char * buffer) {
             i++;
         }
         /* Put in place of first char, skips 255\n First value should be 13 or carriage return*/
-        i += 5;
+        i += 4;
         firstcharpos = i;
     }
     else {
@@ -281,13 +281,10 @@ void updateBufferParams(unsigned char * buffer) {
     /* Swap height and width in buffer */
     for(r=firstwidthcharpos,startatzero=0;startatzero<digitsinheight;r++,startatzero++){
         buffer[r]=heightsize[startatzero];
-        printf("Value of r:%d\n",r);
     }
     buffer[r]=(unsigned char)32;
-    printf("Value of r:%d\n",r);
     for(r=r+1,startatzero=0;startatzero<digitsinwidth;r++,startatzero++){
         buffer[r]=widthsize[startatzero];
-        printf("Value of r:%d\n",r);
     } 
     
     /* Swap saved height and width values in respective array*/
@@ -321,11 +318,11 @@ void printOptions() {
     printf(" 3) Negative (invert colors)\n");
     printf(" 4) Rotate Right (Clockwise)\n");
     printf(" 5) Rotate Left (Counter-Clockwise)\n");
-    printf(" 6) Darken\n");
+    printf(" 6) Brighten\n");
     printf(" 7) Increase Color Red\n");
     printf(" 8) Increase Color Green\n");
     printf(" 9) Increase Color Blue\n");
-    printf(" 10) Brighten\n");
+    printf(" 10) Darken\n");
     printf(" 11) Decrease Color Red\n");
     printf(" 12) Decrease Color Green\n");
     printf(" 13) Decrease Color Blue\n");
@@ -389,43 +386,43 @@ int main(int argc, char *argv[]) {
                 printOptions();
                 break;
             case 6:
-                printf("Making Image Darker\n");
-                darken(pixels);
-                printOptions();
-                break;
-            case 7:
-                printf("Making Image More Red\n");
-                darkenReds(pixels);
-                printOptions();
-                break;
-            case 8:
-                printf("Making Image More Blue\n");
-                darkenBlues(pixels);
-                printOptions();
-                break;
-            case 9:
-                printf("Making Image More Green\n");
-                darkenGreens(pixels);
-                printOptions();
-                break;
-            case 10:
                 printf("Making Image Brighter\n");
                 brighten(pixels);
                 printOptions();
                 break;
+            case 7:
+                printf("Making Image More Red\n");
+                brightenReds(pixels);
+                printOptions();
+                break;
+            case 8:
+                printf("Making Image More Green\n");
+                brightenGreens(pixels);
+                printOptions();
+                break;
+            case 9:
+                printf("Making Image More Blue\n");
+                brightenBlues(pixels);
+                printOptions();
+                break;
+            case 10:
+                printf("Making Image Darker\n");
+                darken(pixels);
+                printOptions();
+                break;
             case 11:
                 printf("Making Image Less Red\n");
-                brightenReds(pixels);
+                darkenReds(pixels);
                 printOptions();
                 break;
             case 12:
                 printf("Making Image Less Blue\n");
-                brightenBlues(pixels);
+                darkenBlues(pixels);
                 printOptions();
                 break;
             case 13:
                 printf("Making Image Less Green\n");
-                brightenGreens(pixels);
+                darkenGreens(pixels);
                 printOptions();
                 break;
             case 14:
