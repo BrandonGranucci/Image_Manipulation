@@ -19,6 +19,10 @@ C based program which takes .ppm image files and allows the user to edit them in
 * Signedness
 * Files Opening, Editing, & Saving
 
+## Program Walkthrough
+
+<img src='imgs/walkthrough.gif' title='Walkthrough gif' width=500 alt='Walkthrough gif' />
+
 ## Functionality Showcase
 
 ### PLEASE NOTE: Images are in .png format because Github does not currently support .ppm files thus screenshots of the .ppm images were taken and saved as .png files so that they would be properly displayed in this showcase.
