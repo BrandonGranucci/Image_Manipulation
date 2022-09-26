@@ -1,4 +1,4 @@
-# Image_Manipulation
+# Image Manipulation
 
 C based program which takes .ppm image files and allows the user to edit them in several different ways. 
 
